@@ -67,11 +67,11 @@
                     <h5>Enter Values</h5>
                     <form class="row gy-3 gx-3">
                         <div class="col">
-                            <input id="startValue" type="number" class="form-control" placeholder="Start Value"
+                            <input id="fizzValue" type="number" class="form-control" placeholder="Fizz Value"
                                 value="3" aria-label="Start Value">
                         </div>
                         <div class="col">
-                            <input id="endValue" type="number" class="form-control" placeholder="End Value" value="5"
+                            <input id="buzzValue" type="number" class="form-control" placeholder="Buzz Value" value="5"
                                 aria-label="End Value">
                         </div>
                         <div class="col-12 d-flex justify-content-end">
@@ -124,6 +124,9 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
         </script>
     <script src="js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click",getValues);
+    </script>
 </body>
 
 </html>
