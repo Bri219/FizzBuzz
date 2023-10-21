@@ -16,11 +16,11 @@ body {
 }
 
 nav {
-  background-color: #0b808a;
+  background-color: #0b538a;
 }
 
 footer {
-  background-color: #0b808a;
+  background-color: #0b538a;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -94,5 +94,8 @@ height: 65px;
 color: var(--logo-blue)
 }
 
+span.text-muted {
+  color: #f6ebeb !important;
+}
 
 
