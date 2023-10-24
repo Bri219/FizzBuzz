@@ -20,66 +20,66 @@ function getValues() {
 };
 
 // Do fizz buzz
-// function fizzBuzz(fizzValue, buzzValue) {
-//   let returnArray = [];
+function fizzBuzz(fizzValue, buzzValue) {
+  let returnArray = [];
 
-//   // Loop from 1 to 100
-//   for (let i = 1; i <= 100; i++) {
+  // Loop from 1 to 100
+  for (let i = 1; i <= 100; i++) {
 
-//       // Check to see if divisible by both (3 and 5)
-//       // Check to see if divisible by fizz value(3)
-//       // Check to see if divisible by buzz value (5)
-//       if (i % fizzValue == 0 && i % buzzValue == 0) {
-//           returnArray.push('FizzBuzz');
-//       } else if (i % fizzValue == 0) {
-//           returnArray.push('Fizz');
-//       } else if (i % buzzValue == 0) {
-//           returnArray.push('Buzz');
-//       } else {
-//           returnArray.push(i);
-//       }
-//   }
-//   return returnArray;
-// };
-
+      // Check to see if divisible by both (3 and 5)
+      // Check to see if divisible by fizz value(3)
+      // Check to see if divisible by buzz value (5)
+      if (i % fizzValue == 0 && i % buzzValue == 0) {
+          returnArray.push('FizzBuzz');
+      } else if (i % fizzValue == 0) {
+          returnArray.push('Fizz');
+      } else if (i % buzzValue == 0) {
+          returnArray.push('Buzz');
+      } else {
+          returnArray.push(i);
+      }
+  }
+  return returnArray;
+};
+// End of 1st Version
 
 // Do fizz buzz >>> Alternate version!
-// function fizzBuzz(fizzValue, buzzValue){
+function fizzBuzz(fizzValue, buzzValue){
    
-//   let returnArray = [];
-//   let Fizz = false;
-//   let Buzz = false;
+  let returnArray = [];
+  let Fizz = false;
+  let Buzz = false;
 
-//   for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 100; i++) {
      
-//     Fizz = i % fizzValue === 0;
-//     Buzz = i % buzzValue === 0;
+    Fizz = i % fizzValue === 0;
+    Buzz = i % buzzValue === 0;
 
-//     switch(true)
-//     {
-//       case Fizz && Buzz:{
-//         returnArray.push('FizzBuzz');
-//         break;
-//       }
-//       case Fizz:{
-//         returnArray.push('Fizz');
-//         break;
-//     }
-//     case Buzz:{
-//       returnArray.push('Buzz');
-//       break;
-//   }
-//     default:{
-//       returnArray.push(i);
-//       break;
-//      }
-//     }
-//   }
-//   return returnArray;
-// };
+    switch(true)
+    {
+      case Fizz && Buzz:{
+        returnArray.push('FizzBuzz');
+        break;
+      }
+      case Fizz:{
+        returnArray.push('Fizz');
+        break;
+    }
+    case Buzz:{
+      returnArray.push('Buzz');
+      break;
+  }
+    default:{
+      returnArray.push(i);
+      break;
+     }
+    }
+  }
+  return returnArray;
+};
+// End of 2nd Veron
 
 // Do fizz buzz 3rd Version!
-
    function fizzBuzz(fizzValue, buzzValue) {
          let returnArray = [];
 
@@ -125,8 +125,6 @@ function displayData(fbArray) {
 
       tableBody.appendChild(tableRow);
   }
-
   // Add all the rows to the table
 };
-
-
+// End of 3rd Version

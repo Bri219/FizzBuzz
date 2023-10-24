@@ -41,10 +41,10 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/Bri219/FizzBuzz">Git Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">About</a>
+                        <a class="nav-link" target="_blank" href="https://b-aponte-main-portfolio.netlify.app/">About</a>
                     </li>
                 </ul>
             </div>
@@ -59,16 +59,152 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                        //Call Hello World
-                         function HelloWorld() {
-                         alert("hello world!");
-                        }</code>
+                            // Get Values
+
+function getValues() {
+  // Get the user values from the page
+  let fizzValue = document.getElementById("fizzValue").value;
+  let buzzValue = document.getElementById("buzzValue").value;
+  // Parse for numbers
+  fizzValue = parseInt(fizzValue);
+  buzzValue = parseInt(buzzValue);
+
+  // Check that the numbers are integers.
+  if (!isNaN(fizzValue) && !isNaN(buzzValue)) {
+      // Call fizzBuzz
+      let fbArray = fizzBuzz(fizzValue, buzzValue);
+      // Call displayData and write the values to the screen
+      displayData(fbArray);
+  } else {
+      alert("You must enter integers!");
+  }
+};
+
+// Do fizz buzz
+function fizzBuzz(fizzValue, buzzValue) {
+  let returnArray = [];
+
+  // Loop from 1 to 100
+  for (let i = 1; i <= 100; i++) {
+
+      // Check to see if divisible by both (3 and 5)
+      // Check to see if divisible by fizz value(3)
+      // Check to see if divisible by buzz value (5)
+      if (i % fizzValue == 0 && i % buzzValue == 0) {
+          returnArray.push('FizzBuzz');
+      } else if (i % fizzValue == 0) {
+          returnArray.push('Fizz');
+      } else if (i % buzzValue == 0) {
+          returnArray.push('Buzz');
+      } else {
+          returnArray.push(i);
+      }
+  }
+  return returnArray;
+};
+// End of 1st Version
+
+// Do fizz buzz >>> Alternate version!
+function fizzBuzz(fizzValue, buzzValue){
+   
+  let returnArray = [];
+  let Fizz = false;
+  let Buzz = false;
+
+  for (let i = 1; i <= 100; i++) {
+     
+    Fizz = i % fizzValue === 0;
+    Buzz = i % buzzValue === 0;
+
+    switch(true)
+    {
+      case Fizz && Buzz:{
+        returnArray.push('FizzBuzz');
+        break;
+      }
+      case Fizz:{
+        returnArray.push('Fizz');
+        break;
+    }
+    case Buzz:{
+      returnArray.push('Buzz');
+      break;
+  }
+    default:{
+      returnArray.push(i);
+      break;
+     }
+    }
+  }
+  return returnArray;
+};
+// End of 2nd Veron
+
+// Do fizz buzz 3rd Version!
+   function fizzBuzz(fizzValue, buzzValue) {
+         let returnArray = [];
+
+       for (let i = 1; i <= 100; i++) {
+        let value = ((i % fizzValue == 0 ? 'Fizz' : '') + (i % buzzValue == 0 ? 'Buzz' : '') || i );
+        returnArray.push(value);
+  }
+  return returnArray;
+};
+
+
+// Loop over the array and create a table row for each item.
+function displayData(fbArray) {
+  // Get the table body element from the page
+  let tableBody = document.getElementById("results");
+
+  // Get the template row
+  let templateRow = document.getElementById("fbTemplate");
+
+  // Clear the table first
+  tableBody.innerHTML = "";
+
+  for (let index = 0; index < fbArray.length; index += 5) {
+      let tableRow = document.importNode(templateRow.content, true);
+
+      // Grab and use the TD elements and put into Array
+      let rowCols = tableRow.querySelectorAll("td");
+
+      rowCols[0].classList.add(fbArray[index]);
+      rowCols[0].textContent = fbArray[index];
+
+      rowCols[1].classList.add(fbArray[index + 1]);
+      rowCols[1].textContent = fbArray[index + 1];
+
+      rowCols[2].classList.add(fbArray[index + 2]);
+      rowCols[2].textContent = fbArray[index + 2];
+
+      rowCols[3].classList.add(fbArray[index + 3]);
+      rowCols[3].textContent = fbArray[index + 3];
+
+      rowCols[4].classList.add(fbArray[index + 4]);
+      rowCols[4].textContent = fbArray[index + 4];
+
+      tableBody.appendChild(tableRow);
+  }
+
+  // Add all the rows to the table
+};
+// End
+                        </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structered in one function</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World".</p>
+                    <p>The Code is structered in two functions</p>
+                    <h5>Fizz Buzz</h5>
+                    <p>getValues() Function: This function is triggered when a user interacts with the HTML form. It retrieves the "fizz" and "buzz" values entered by the user, parses them as integers, and checks if they are valid integers. If they are valid, it calls the fizzBuzz function with these values and then displays the results using the displayData function.
+
+                        fizzBuzz(fizzValue, buzzValue) Function: This function performs the FizzBuzz calculation. It loops from 1 to 100 and checks if each number is divisible by the "fizz" value, "buzz" value, or both. Depending on the divisibility, it adds "Fizz," "Buzz," "FizzBuzz," or the number itself to an array, which is then returned.
+                        
+                        displayData(fbArray) Function: This function takes the FizzBuzz array generated by the fizzBuzz function and displays it in an HTML table. It clears the existing table, retrieves a template row from the HTML, and then populates the table rows with the FizzBuzz results. Each row in the table contains five results.
+                        
+                        The code provided actually contains two different versions of the fizzBuzz function. The first version uses conditional statements (if-else) to determine the FizzBuzz values, while the second version uses a switch statement. Both versions achieve the same goal, but the coding style is different.
+                        
+                        Additionally, there is a third version of the fizzBuzz function provided, which is more concise and uses conditional operators to determine the FizzBuzz values.</p>
                 </div>
             </div>
         </div>
